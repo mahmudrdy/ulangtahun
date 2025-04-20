@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Selamat Ulang Tahun, Sayang 💝</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #fff0f5, #ffe6f0);
+      font-family: 'Georgia', serif;
+      text-align: center;
+      color: #660033;
+      padding: 50px;
+    }
+
+    .container-awal, .container-akhir {
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .hilang {
+      opacity: 0;
+      transform: scale(0.95);
+      pointer-events: none;
+      height: 0;
+      overflow: hidden;
+    }
+
+    .judul {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    .kue {
+      font-size: 5em;
+      animation: goyang 2s infinite ease-in-out;
+    }
+
+    @keyframes goyang {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    .paragraf {
+      font-size: 1.3em;
+      margin: 20px auto;
+      max-width: 700px;
+      line-height: 1.6;
+    }
+
+    .btn {
+      background-color: #cc0066;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 30px;
+      font-size: 1em;
+      margin-top: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #99004d;
+    }
+
+    .container-akhir {
+      display: none;
+      opacity: 0;
+      transform: scale(0.95);
+    }
+
+    .container-akhir.muncul {
+      display: block;
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .pesan-akhir {
+      font-size: 1.6em;
+      margin-top: 40px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #4d0033;
+    }
+
+    .love {
+      font-size: 4em;
+      margin: 20px 0;
+      animation: heartBeat 1.5s infinite;
+    }
+
+    @keyframes heartBeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    .btn-kembali {
+      margin-top: 40px;
+      background-color: #ffb3d9;
+      border: none;
+      color: #660033;
+      padding: 12px 25px;
+      border-radius: 25px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-kembali:hover {
+      background-color: #ffcce6;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Bagian awal -->
+  <div class="container-awal" id="awal">
+    <h1 class="judul">Selamat Ulang Tahun, Cintaku! 🎉</h1>
+    <div class="kue">🎂</div>
+    <p class="paragraf">
+      Hari ini kamu ulang tahun, dan aku cuma mau bilang satu hal...  
+      Kamu adalah hal terindah yang pernah hadir dalam hidupku 💖  
+      Semoga kamu bahagia, selalu sehat, dan mimpimu terwujud semua 🌟
+    </p>
+    <button class="btn" onclick="tampilkanUcapan()">Klik di sini kalau kamu penasaran 😚</button>
+  </div>
+
+  <!-- Bagian setelah tombol diklik -->
+  <div class="container-akhir" id="akhir">
+    <div class="love">💗</div>
+    <p class="pesan-akhir">
+      Ini ini ini...  
+      Orang yang paling spesial ulang tahun hari ini~ 🎂  
+      Aku mungkin nggak bisa ngasih hadiah mewah atau kejutan spektakuler...  
+      Tapi aku bisa janji, setiap harimu bakal penuh cinta dan dukungan dariku 💞  
+      Semoga hari-harimu selalu manis, kayak senyuman kamu tiap pagi 🥰  
+      <br><br>
+      Aku cinta kamu. Hari ini. Besok. Dan seterusnya. 💖
+    </p>
+    <button class="btn-kembali" onclick="kembaliKeAwal()">Kembali ke Awal 💫</button>
+  </div>
+
+  <script>
+    function tampilkanUcapan() {
+      document.getElementById("awal").classList.add("hilang");
+      const akhir = document.getElementById("akhir");
+      setTimeout(() => {
+        akhir.classList.add("muncul");
+      }, 500);
+    }
+
+    function kembaliKeAwal() {
+      document.getElementById("akhir").classList.remove("muncul");
+      setTimeout(() => {
+        document.getElementById("awal").classList.remove("hilang");
+      }, 500);
+    }
+  </script>
+
+</body>
+</html>
